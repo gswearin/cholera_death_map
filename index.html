@@ -7,7 +7,7 @@
 		<title>Cholera Visualization</title>
 	</head>
 	<body>
-		<h1>Cholera Outbreak Visualization</h1>
+		<h1>Cholera Outbreak Visualization | <a href = 'about.html'> About </a> | <a href = 'documentation.html'> Documentation </a> </h1>
 		<br>
 		<br>
 		<script>
@@ -135,7 +135,7 @@
 						//console.log(deaths_by_day);
 						for (var i = 0; i < deaths_by_day.length; i++) {
 							//console.log(c);
-							d3.select('g').selectAll('.c' + i).data(deaths_by_day[i]).enter().append('circle').attr('r', 3*scaleXY).attr('fill', function(d) {return d3.hsl(200 - d['gender']*200, 0.5, 0.3 + d['age']*0.1);}).attr('cx', function(d) {return xMapScale(d['x']);}).attr('cy', function(d) {return yMapScale(d['y']);}).attr('class', 'c' + i).attr('opacity', 0);
+							d3.select('g').selectAll('.c' + i).data(deaths_by_day[i]).enter().append('circle').attr('r', 5*scaleXY).attr('fill', function(d) {return d3.hsl(200 - d['gender']*200, 0.5, 0.3 + d['age']*0.1);}).attr('cx', function(d) {return xMapScale(d['x']);}).attr('cy', function(d) {return yMapScale(d['y']);}).attr('class', 'c' + i).attr('opacity', 0);
 						}
 						function show_deaths(c) {
 							for (var i = start_day; i < parseInt(c) + 1; i++) {
@@ -239,7 +239,7 @@
 				});
 				var bKeys = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8];
 				d3.select('#svg1').selectAll('.bKey').data(bKeys).enter().append('rect').attr('x', 1030*scaleXY).attr('y', function(d, i) {return 60*scaleXY + 60*i*scaleXY;}).attr('width', 60*scaleXY).attr('height', 60*scaleXY).attr('class', 'bKey').attr('fill', function(d) {return d3.hsl(200, 0.5, d);});
-				d3.select('#svg1').append('circle').attr('cx', 1060*scaleXY).attr('cy', function(d, i) {return 60*scaleXY + 60*7.5*scaleXY;}).attr('r', 15*scaleXY).attr('class', 'bKey').attr('fill', 'darkgray');
+				d3.select('#svg1').append('circle').attr('cx', 1060*scaleXY).attr('cy', function(d, i) {return 60*scaleXY + 60*7.5*scaleXY;}).attr('r', 15*scaleXY).attr('fill', 'darkgray');
 				d3.select('#svg1').append('rect').attr('x', 1030*scaleXY).attr('y', 60*scaleXY + 60*8.5*scaleXY).attr('width', 60*scaleXY).attr('height', 60*scaleXY).attr('fill', 'orange').attr('opacity', 0.5);
 				d3.select('#svg1').append('rect').attr('x', 1030*scaleXY).attr('y', 150*scaleXY + 60*8.5*scaleXY).attr('width', 60*scaleXY).attr('height', 60*scaleXY).attr('fill', 'purple').attr('opacity', 0.5);
 				d3.select('#svg1').selectAll('.rKey').data(bKeys).enter().append('rect').attr('x', 1120*scaleXY).attr('y', function(d, i) {return 60*scaleXY + 60*i*scaleXY;}).attr('width', 60*scaleXY).attr('height', 60*scaleXY).attr('class', 'rKey').attr('fill', function(d) {return d3.hsl(0, 0.5, d);});
