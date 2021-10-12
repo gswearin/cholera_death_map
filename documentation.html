@@ -15,9 +15,9 @@
 		My reasoning in doing this before any planning on the actual visualization was that, because I am still new to D3, and because of the limited time, it would put me at ease to see some sort of code-related progress as early as possible.
 		<br><br>
 		I used a variety of sources to accomplish these first two steps. For displaying the line segments, the most useful resource was Cook (2021), which included an interactive template that I could experiment with.
-		It also allowed me to change the version to v3 (the version I'm using), which gave me the chance to figure out what functionalities were not v3-compatible and how I needed to change them.
+		It also allowed me to change the template version to v3 (the version I'm using), which gave me the chance to figure out what functionalities were not v3-compatible and how I needed to change them.
 		<br><br>
-		I also looked at Staroscik (2015) for reference.
+		I also looked at Staroscik (2015) and Holtz (2018b) for reference.
 		<br><br>
 		I eventually became comfortable with how lines work in D3. A problem I ran into was that I was trying to append multiple separated line segments.
 		At first, I used a <i>for</i> loop to append the many different lines. I then looked at Reda (2021b) and learned how to use .enter().append() in place of a <i>for</i> loop.
@@ -49,8 +49,8 @@
 		I then had to make the bar chart interactive. Hovering over a certain bar should display the points up until that date.
 		This was rather difficult. Schmidt (2019) and Reda (2021a) were good starting points for hovering/linking, but the main challenge was getting the bar chart to display points UNTIL that day, rather than ON that day.
 		I ended up accomplishing this by using nested <i>for</i> loops to create an array <i>deaths_by_day</i>, which grouped the deaths, along with their location and other info, by day.
-		From there, I could systematically name the ids of the timeline bars, and the classes of the death points, such that hovering over a bar would call for points with id numbers up until the bar's class number to be displayed.
-		I later had to make an adjustment such that the user could choose the start date as well. I decided that since hovering was already used to determine the start date, clicking could be used to determine the end date.
+		From there, I could systematically name the ids of the timeline bars, and the classes of the death points, such that hovering over a bar would call for points with class numbers up until the bar's id number to be displayed.
+		I later had to make an adjustment such that the user could choose the start date as well. I decided that since hovering was already used to determine the end date, clicking could be used to determine the start date.
 		To make a bar appear as selected, I highlighted it blue, as this is how selected text is normally depicted.<br>
 		<img src = 'select.png'></img>
 		</p>
@@ -60,10 +60,10 @@
 		From here, I started working on the zooming and panning features of the map. I found some helpful examples on panning, including Pereira (2021), Johnson (2016), Navarro (2015), and d3noob (2021a).
 		Navarro's example was most useful, since it used v3 specifically. But I needed to use all of them to truly get a sense of how the code was functioning and what variations would and would not work.
 		My takeaway was that D3 handled the coordinates relating to the movement, but the event still had to be setup manually to make the object move to those coordinates while being dragged.
-		It was also made more difficult by the fact that I had to be able to drag not a single object, but the entire set of object lying upon a 'g' element.
+		It was also made more difficult by the fact that I had to be able to drag not a single object, but the entire set of objects lying upon a 'g' element.
 		I used the transform() function to do this.
 		<br><br>
-		For panning, I found Singh's 2015 example to be helpful. For the most part, I used this example for panning by itself.
+		For zooming, I found Singh's 2015 example to be helpful.
 		Surprisingly, the challenging part here was combining zooming and panning. Because both used transform() functions, they seemed to override each other.
 		For example, the <i>zoom</i> transform would set the coordinates back to their default values. I ended up having to explicitly set the coordinates to their current values within the <i>zoom</i> transform to work around this.
 		<br><br>
@@ -92,7 +92,7 @@
 		<br><br>
 		From here, I just polished up some small details of my design and checked for color-blindness issues with Color Oracle.
 		<br><br>
-		I was able to infer a great deal about the nature of this outbreak based on the visaulization.
+		I was able to infer a great deal about the nature of this outbreak based on the visualization.
 		Most of the deaths occured around the Broad Street pump, as John Snow found (Rogers, 2013). None of the other pumps had a high concentration of deaths around them.<br>
 		<img src = 'pump_cluster.png'></img>
 		</p>
@@ -124,7 +124,7 @@
 		d3noob (2021a). d3.drag with grouped elements in v4. Retrieved Oct 3, 2021, from https://bl.ocks.org/d3noob/204d08d309d2b2903e12554b0aef6a4d.<br>
 		d3noob (2021b). Interactive text rotation with d3.js. Retrieved Oct 9, 2021, from https://bl.ocks.org/d3noob/10633421/88b8cf3413031243f28a2d4a4d1969e29564c42a.<br>
 		Holtz, Yan (2018a). Basic scatterplot in d3.js. Retrieved Sep 25, 2021, from https://www.d3-graph-gallery.com/graph/scatter_basic.html.<br>
-		Holtz, Yan (2018b). Retrieved Sep 25, 2021, from https://www.d3-graph-gallery.com/graph/shape.html.<br>
+		Holtz, Yan (2018b). Building shapes in d3.js. Retrieved Sep 25, 2021, from https://www.d3-graph-gallery.com/graph/shape.html.<br>
 		Johnson, Ian (2016). D3 behavior.drag example. Retrieved Oct 3, 2021, from http://bl.ocks.org/enjalot/1378144.<br>
 		Navarro, Pablo (2015). Example of Drag Behavior in D3. Retrieved Oct 3, 2021, from https://bl.ocks.org/pnavarrc/5190856.<br>
 		Pereira, Gérald (2021). D3.js Tutorial: Drag and Drop. Retrieved Oct 3, 2021, from https://octoperf.com/blog/2018/04/18/d3-js-drag-and-drop-tutorial/.<br>
