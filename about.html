@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<html lang = 'en'>
+<html lang = "en">
 	<head>
-		<meta charset = 'UTF-8'>
-		<link rel = 'stylesheet' href = 'style.css'>
-		<title>Customer Trends and Purchasing Habits</title>
+		<meta charset = "UTF-8">
+		<link rel = "stylesheet" href = "style.css">
+		<script src = "https://d3js.org/d3.v3.min.js"></script>
+		<title>Cholera Visualization</title>
 	</head>
 	<body>
-		<h1> <a href = 'index.html'> Customer Trends and Purchasing Habits </a> | About | <a href = 'documentation.html'> Documentation </a> </h1>
-		<p>This project was created by John Cochran and Garrett Swearingen for Dr. Khairi Reda's Data Visualization course at IUPUI during the Fall 2021 semester.
-		   We aimed to provide tools to explore relationships between different factors relating to customer purchasing habits.
-		   You can use this to investigate questions such as:</p>
-		<p>-How does the income of a customer affect how much wine they are likely to purchase?</p>
-		<p>-Do younger customers tend to buy their products through different means (e.g. web vs. store)?</p>
-		<p>-In what ways are purchasing habits of people with children/teenagers different?</p>
-		<p>The visualization contains three different views. Use the arrows under the visualization to navigate across the different views.</p>
-		<p style = 'font-size: 24px;'><b>View 1</b></p>
-		<img src = 'view1.png' width = '50%', height = '50%'>
-		<p style = 'font-size: 24px;'><b>View 2</b></p>
-		<img src = 'view2.png' width = '50%', height = '50%'>
-		<p>The first two views allow you to filter the customers by certain variables and gauge view the distributions of other variables for those customers.
-		   Distributions are displayed as violin plots, with the thickness of areas indicating the amount of data distributed in those areas.
-		   Box plots within the violin plots show the mean, median, and interquartile range of the data.
-		   The first view features <i>marital status</i> and <i>education</i> filters and the second view features <i>income</i> and <i>birth year</i> filters.</p>
-		<p style = 'font-size: 24px;'><b>View 3</b></p>
-		<img src = 'view3.png' width = '50%', height = '50%'>
-		<p>The third plot enables you to visualize direct relationships among pairs of variables.
-		   You can hover your mouse across the different points to view their ID along with their X and Y values.
-		   The buttons on the top allow you to choose a regression line to attempt to fit the data.
-		   This way you can gauge whether a line, parabola, exponential curve, or some other function best explains the relationship of the two variables.</p>
-		<p>Data can also be scaled using the transformation buttons on the bottom and left of the visual.
-		   These buttons visually scale the desired axis down according to the selected transformation function.
-		   Note that this works independently from the regression functions.
-		   A linear regression function won't appear linear if one of the axes is scaled.</p>
-		<p><a href = https://www.kaggle.com/imakash3011/customer-personality-analysis>Akash Patel's dataset from Kaggle (2021)</a> was used for this visual.</p>
+		<h1><a href = 'index.html'> Cholera Outbreak Visualization </a> | About | <a href = 'documentation.html'> Documentation </a> </h1>
+		<br>
+		<br>
+		<p>This project was created by Garrett Swearingen for Dr. Khairi Reda's data visualization course at IUPUI. The idea was to create a visualization of the cholera outbreak in 19th century London by
+		recreating and building upon
+		<a href = 'https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak#/media/File:Snow-cholera-map-1.jpg'>John Snow's map of the outbreak</a>.
+		Line segments that make up the map of the general area, locations of pumps, deaths and relevant information (location, day, gender, age), and an estimated population age distribution in the setting were given
+		in the <a href = 'https://khreda.com/teaching/fall2021/H517/project1/'>project description</a>. Some additional points of interest (street names, work house, brewery) were located from John Snow's map itself.
+		<br>
+		<br>
+		Functionalities of the visual:<br><br>
+		-Hover over the bars on the timeline to view deaths up until the specified date.<br>
+		-Click on a bar on the timeline to specify the start date from which you want to view deaths.<br>
+		-Click on the "Cluster View" button to display a grid showing how many deaths in the specified range there are for each cell.<br>
+		-Click the (+) and (-) buttons to adjust the number of cells.<br>
+		-Drag and scroll on the map to pan and zoom.<br>
+		-View the charts on the bottom for information regarding the distribution of ages and genders.
+		</p>
 	</body>
 </html>
